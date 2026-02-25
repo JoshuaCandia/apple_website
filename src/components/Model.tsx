@@ -30,9 +30,9 @@ const Model = () => {
   const [smallRotation, setSmallRotation] = useState(0);
   const [largeRotation, setLargeRotation] = useState(0);
 
-  const tl = gsap.timeline();
-
   useEffect(() => {
+    const tl = gsap.timeline();
+
     if (size === "large") {
       animateWithGsapTimeline(tl, small, smallRotation, "#view1", "#view2", {
         transform: "translateX(-100%)",
@@ -46,6 +46,10 @@ const Model = () => {
         duration: 2,
       });
     }
+
+    return () => {
+      tl.kill();
+    };
   }, [size]);
 
   useGSAP(() => {

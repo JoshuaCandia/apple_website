@@ -1,5 +1,3 @@
-import { DEFAULT } from "@react-three/fiber/dist/declarations/src/core/utils";
-
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
