@@ -1,55 +1,74 @@
-# iPhone 15 Pro — Apple Website Clone
+# iPhone 15 Pro — Clon del sitio de Apple
 
-A pixel-faithful clone of the Apple iPhone 15 Pro product page, built with React, Three.js and GSAP.
+**URL:**
+[https://starbucks-copy.joshuacandia.dev](https://starbucks-copy.joshuacandia.dev)
 
-## Features
+Clon fiel al pixel del sitio de producto del iPhone 15 Pro de Apple, desarrollado con React, Three.js y GSAP.
 
-- **Hero section** — Full-screen video that adapts to mobile/desktop viewport
-- **Highlights carousel** — Autoplay video carousel with custom progress indicators and play/pause controls
-- **3D iPhone viewer** — Interactive Three.js model with color and size selector (6.1" / 6.7"), animated transitions between sizes using GSAP
-- **GSAP animations** — Scroll-triggered reveals, smooth section transitions and timeline-based effects throughout
+---
 
-## Tech Stack
+## Funcionalidades
 
-| Tool | Purpose |
-|------|---------|
-| React 18 + TypeScript | UI framework |
-| Vite | Build tool & dev server |
-| Three.js + React Three Fiber | 3D rendering |
-| @react-three/drei | Three.js helpers (View, OrbitControls, useGLTF…) |
-| GSAP + @gsap/react | Animations and scroll triggers |
-| Tailwind CSS | Styling |
+* **Sección Hero**
+  Video en pantalla completa que se adapta automáticamente a viewport mobile y desktop.
 
-## Getting Started
+* **Carrusel de destacados**
+  Carrusel de videos con autoplay, indicadores de progreso personalizados y controles de play/pausa.
+
+* **Visor 3D del iPhone**
+  Modelo interactivo en Three.js con selector de color y tamaño (6.1" / 6.7"), incluyendo transiciones animadas entre tamaños utilizando GSAP.
+
+* **Animaciones con GSAP**
+  Animaciones activadas por scroll, transiciones suaves entre secciones y efectos basados en timelines a lo largo del sitio.
+
+---
+
+## Stack Tecnológico
+
+| Herramienta                  | Propósito                                                     |
+| ---------------------------- | ------------------------------------------------------------- |
+| React 18 + TypeScript        | Framework de UI                                               |
+| Vite                         | Build tool y servidor de desarrollo                           |
+| Three.js + React Three Fiber | Renderizado 3D                                                |
+| @react-three/drei            | Utilidades para Three.js (View, OrbitControls, useGLTF, etc.) |
+| GSAP + @gsap/react           | Animaciones y triggers por scroll                             |
+| Tailwind CSS                 | Estilado                                                      |
+
+---
+
+## Cómo ejecutarlo
 
 ```bash
-# Install dependencies
+# Instalar dependencias
 npm install
 
-# Start dev server
+# Iniciar entorno de desarrollo
 npm run dev
 
-# Build for production
+# Generar build de producción
 npm run build
 ```
 
-## Project Structure
+---
+
+## Estructura del Proyecto
 
 ```
 src/
 ├── components/
-│   ├── Navbar.tsx          # Top navigation bar
-│   ├── Hero.tsx            # Hero section with video
-│   ├── Highlights.tsx      # Video carousel section
-│   ├── VideoCarousel.tsx   # Carousel logic and progress bar
-│   ├── Model.tsx           # 3D phone section (size/color selector)
-│   ├── ModelView.tsx       # Three.js View wrapper per phone size
-│   ├── IPhone.tsx          # GLTF model loader with dynamic colors
-│   └── Lights.tsx          # Three.js lighting setup
-├── constants/              # Nav links, model data, video slide data
-├── utils/                  # Asset imports and GSAP animation helpers
-└── index.css               # Global styles and Tailwind utilities
+│   ├── Navbar.tsx          # Barra de navegación superior
+│   ├── Hero.tsx            # Sección principal con video
+│   ├── Highlights.tsx      # Sección de carrusel de videos
+│   ├── VideoCarousel.tsx   # Lógica del carrusel y barra de progreso
+│   ├── Model.tsx           # Sección 3D con selector de tamaño/color
+│   ├── ModelView.tsx       # Wrapper de Three.js por tamaño
+│   ├── IPhone.tsx          # Loader del modelo GLTF con colores dinámicos
+│   └── Lights.tsx          # Configuración de iluminación Three.js
+├── constants/              # Links de navegación, datos del modelo y slides
+├── utils/                  # Helpers de assets y animaciones GSAP
+└── index.css               # Estilos globales y utilidades de Tailwind
+
 public/
-├── assets/                 # Images and videos
-└── models/scene.glb        # iPhone 15 Pro 3D model
+├── assets/                 # Imágenes y videos
+└── models/scene.glb        # Modelo 3D del iPhone 15 Pro
 ```
