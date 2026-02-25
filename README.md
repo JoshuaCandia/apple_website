@@ -1,51 +1,55 @@
-# React + TypeScript + Vite
+# iPhone 15 Pro — Apple Website Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A pixel-faithful clone of the Apple iPhone 15 Pro product page, built with React, Three.js and GSAP.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Hero section** — Full-screen video that adapts to mobile/desktop viewport
+- **Highlights carousel** — Autoplay video carousel with custom progress indicators and play/pause controls
+- **3D iPhone viewer** — Interactive Three.js model with color and size selector (6.1" / 6.7"), animated transitions between sizes using GSAP
+- **GSAP animations** — Scroll-triggered reveals, smooth section transitions and timeline-based effects throughout
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+| Tool | Purpose |
+|------|---------|
+| React 18 + TypeScript | UI framework |
+| Vite | Build tool & dev server |
+| Three.js + React Three Fiber | 3D rendering |
+| @react-three/drei | Three.js helpers (View, OrbitControls, useGLTF…) |
+| GSAP + @gsap/react | Animations and scroll triggers |
+| Tailwind CSS | Styling |
 
-- Configure the top-level `parserOptions` property like this:
+## Getting Started
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+# Install dependencies
+npm install
+
+# Start dev server
+npm run dev
+
+# Build for production
+npm run build
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Project Structure
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
 ```
-# apple_website
+src/
+├── components/
+│   ├── Navbar.tsx          # Top navigation bar
+│   ├── Hero.tsx            # Hero section with video
+│   ├── Highlights.tsx      # Video carousel section
+│   ├── VideoCarousel.tsx   # Carousel logic and progress bar
+│   ├── Model.tsx           # 3D phone section (size/color selector)
+│   ├── ModelView.tsx       # Three.js View wrapper per phone size
+│   ├── IPhone.tsx          # GLTF model loader with dynamic colors
+│   └── Lights.tsx          # Three.js lighting setup
+├── constants/              # Nav links, model data, video slide data
+├── utils/                  # Asset imports and GSAP animation helpers
+└── index.css               # Global styles and Tailwind utilities
+public/
+├── assets/                 # Images and videos
+└── models/scene.glb        # iPhone 15 Pro 3D model
+```
