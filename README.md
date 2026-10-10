@@ -1,7 +1,7 @@
 # iPhone 15 Pro — Clon del sitio de Apple
 
 **URL:**
-[https://starbucks-copy.joshuacandia.dev](https://starbucks-copy.joshuacandia.dev)
+[https://apple-website-coral.vercel.app](https://apple-website-coral.vercel.app)
 
 Clon fiel al pixel del sitio de producto del iPhone 15 Pro de Apple, desarrollado con React, Three.js y GSAP.
 
